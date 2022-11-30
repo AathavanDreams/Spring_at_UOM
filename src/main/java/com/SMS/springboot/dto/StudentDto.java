@@ -2,12 +2,22 @@ package com.SMS.springboot.dto;
 
 public class StudentDto {
 
+    private Integer id;
     private String firstName;
     private String lastName;
 
-    public StudentDto(String firstName, String lastName) {
+    public StudentDto(Integer id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {

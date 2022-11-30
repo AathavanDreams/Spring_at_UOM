@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Students</title>
+    <script>
+
+        let rows =
+            `<tr><th>Student ID</th><th>First Name</th><th>Last Name</th></tr>`;
+
+        fetch('http://localhost:8080/show-students')
+            .then(function (response) {
+                return response.json();
+            }).then(function (data) {
+            data.map(item => {
+                rows += `<tr><td>${item.id}</td><td>${item.firstName}</td><td>${item.lastName}</td></tr>`
+            })
+            document.getElementById("students").innerHTML = rows;
+        });
+    </script>
+</head>
+<body style="text-align: center">
+<h2>Registered Students</h2>
+<table border="1" id="students" style="margin: auto !important;">
+</table>
+</body>
+</html>
