@@ -10,6 +10,10 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public Student() {
+
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -25,4 +29,5 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }
