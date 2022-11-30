@@ -1,5 +1,7 @@
 package com.SMS.springboot.controller;
 
+import com.SMS.springboot.dto.StudentDto;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,8 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
 
     @RequestMapping("/save-student")
-    public String saveStudent() {
-        return "Let's save student details.";
+    public String saveStudent(@ModelAttribute StudentDto studentDto) {
+        String name = "Student Name: "+studentDto.getFirstName()+" "+studentDto.getLastName();
+        return name;
     }
 
 }
