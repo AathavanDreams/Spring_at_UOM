@@ -27,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
             studentRepo.save(studentEntity);
 
         } catch (Exception e) {
-
+            System.out.println(e);
         }
 
     }
